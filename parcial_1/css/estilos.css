@@ -1,0 +1,467 @@
+/* Global */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  width: 100%;
+}
+
+body {
+
+  background-image: url(../img/fondo-01.jpg);
+  background-color: rgba(245, 230, 183, 0.568);
+  
+ }
+
+ main {
+  background-color: rgba(238, 248, 211, 0.568);
+  max-width: 1124px;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgb(240, 229, 229);
+  box-shadow: rgba(0, 0, 0, 0.219) 2px 2px 3px;
+  text-shadow: 4px 2px 2px rgba(0, 0, 0, 0.151);
+  margin: 0.2rem auto 0 auto;
+}
+
+
+
+header {
+  
+    display: flex;
+ 
+    align-items: center;  
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    background-color:#c9fbca;
+    height: 80px;
+    box-shadow: rgba(0, 0, 0, 0.219) 2px 2px 3px;   
+  
+}
+
+header img{
+  width: auto;
+  height: 70%;
+  margin: auto;
+} 
+
+header p {
+  display: none;
+  
+}
+
+
+h1{
+  display: none;
+}
+
+
+h2{
+  font-size: 3rem;
+  
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid rgb(248, 102, 5);
+  box-shadow: 0px 2px 0px rgba(110, 110, 110, 0.336);
+
+}
+
+h3{
+  font-size: 2.5rem;
+  padding: 3rem;
+  text-align: center;
+  color: #686767;
+  border-top: 1px solid rgba(250, 144, 241, 0.425);
+  box-shadow: 0 5px 15px rgba(51, 0, 53, 0.459);
+  font-weight: 400;
+}
+
+
+ul, li {
+  list-style-type: none;  
+    padding: 0;   /* Elimina el padding */
+    margin: 0;    /* Elimina el margen */
+  
+}
+
+
+
+strong {
+  color: #696766; /* Cambia el color del texto */
+  font-size: 1.8rem; /* Aumenta el tamaño de la fuente */
+  font-weight: 700;
+}
+
+
+
+.normal { background-color: #e3b8f7; color: #5e157a; }
+.bajo { background-color: #f5f7a9; color: #856404; }
+.sobrepeso { background-color: #faa8af; color: #dd2336; }
+.medio { background-color: #cce5ff; color: #388fec; }  
+
+/*seccion navegacion*/
+#navegacion {
+  background-color: #fff3cd;
+  color: #f76b0e;
+}
+.banner img {
+  width: 100%;    
+  margin: auto;
+  border-bottom: 3px solid rgb(153, 100, 51);
+  box-shadow: 0 10px 10px -5px rgba(235, 77, 4, 0.658);
+  background-color: #fce4b0;
+}
+.descripcion{
+
+  padding: 1.5rem;
+  text-align: center;
+}
+.descripcion p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+   
+}
+
+#formulario{
+  background-color: #adf0c9;
+}
+
+.contenedor-formulario {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+  gap: 2rem;
+  margin-bottom: 2rem;
+ 
+}
+
+.formulario {
+  width: 100%;
+  margin: auto;
+  background-color: rgb(252, 211, 123);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(51, 0, 53, 0.459);
+  color: #6b6a69;
+  font-size: 1.5rem;
+  height: auto; 
+  font-weight: 400;
+}
+
+
+.formulario h4 {
+  text-align: left;
+  margin-bottom: 1.3rem;
+  padding: 0.5rem;
+  border-bottom: 0.2rem solid rgb(240, 110, 5);
+  font-size: 1.8rem;
+  
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formulario label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+
+}
+
+.formulario input[type="text"],
+.formulario input[type="number"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.formulario input[type="radio"] {
+  margin-right: 0.4rem;
+  transform: scale(1.1);
+}
+
+.formulario:hover{
+  transition: transform 0.3s ease, filter 0.3s ease;
+  box-shadow: 5px 3px 10px rgb(248, 129, 32);
+  transform: scale(1.05);
+}
+
+.tabla> ul{
+  display: grid;
+  grid-template-columns: 1fr;
+ 
+
+}
+.tabla{
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+
+.tabla li{
+  width: 100%; /* Hace que cada <li> ocupe el 90% del ancho disponible en móviles */
+  max-width: none; /* Elimina el límite de ancho en móviles */
+  box-shadow: 0 5px 15px rgba(51, 0, 53, 0.459);
+  padding: 1rem;
+
+ 
+
+}
+button {
+  background-color: #f5f4f4;
+  color: rgb(236, 151, 23);  
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem 0.5rem 1rem  ;
+  border: 1px solid #fa9434;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  box-shadow: 5px 3px 10px rgb(248, 129, 32);
+ 
+  
+  
+}
+
+button:hover {
+  background-color: #fa9434;
+  transition: background 0.3s ease;
+  color:#f5f4f4;
+  box-shadow: 5px 3px 10px rgb(248, 129, 32);
+}
+
+
+small.error {
+  display: block;
+  min-height: 1.2rem; /* Ajustá según tamaño del texto */
+  color: #f7f1f0;
+  background-color: #f71d1d;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  visibility: hidden; /* Oculto, pero ocupa espacio */
+}
+
+small.error.visible {
+  visibility: visible;
+}
+.resultado{
+  background-color: #fdf0c8;
+}
+
+.contenedor-resultado li:hover{
+  transition: transform 0.3s ease, filter 0.3s ease;
+  box-shadow: 5px 3px 10px rgb(110, 110, 110);
+  transform: scale(1.10);
+}
+
+.resultado li{
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.resultado p {
+  font-size: 1.4rem;
+  font-weight: 400;
+
+}
+
+.naranja{
+  color: #585858;
+  background-color: #f89d48;
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  line-height: 1.5;
+  font-weight: 600;
+  
+}
+
+#contenedor-plan{
+  background-color: #fab05b;
+}
+
+/* Grillas */
+.planes-container {
+  display: flex;
+  flex-direction: column;  /* Asegura que las tarjetas estén una debajo de otra */
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;  /* Ocupa todo el ancho disponible */
+}
+
+.plan-card {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.plan-card:hover {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  box-shadow: 5px 3px 10px rgb(241, 129, 1);
+  transform: scale(1.05);
+}
+
+.img-tarj img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  background-color: #fffefe;
+}
+
+.selected-img {
+  border-top: 4px solid #f57e0e;
+  box-shadow: 0 0 10px #f39924;
+}
+
+.texto-plan {
+  padding: 15px;
+  background-color: #e4f8ab;
+  color: #434446;
+  text-align: center;
+}
+
+.texInfo p {
+  margin: 10px 0;
+  line-height: 1.4;
+  font-size: 1rem;
+  padding: 1rem;
+  
+}
+
+.icono-ejercicio{
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 50px;  
+    height: auto;
+    
+  }
+.plan-card h5{
+  padding: 0.8rem;
+}
+span{
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  color: #6b6a69;
+
+}
+  
+ 
+
+footer{
+  background-color: #6fc2ad;
+  color: beige;
+  text-shadow: 4px 2px 2px rgba(0, 0, 0, 0.151);
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+
+/* Responsive */
+@media (min-width: 992px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr 12fr;  
+    align-items: center;
+    height: 80px;
+  }
+  
+  header img{
+    width: auto;
+    height: 100%;    
+    padding-left: 2rem;
+  }
+
+
+  header p {
+    display: block;
+    font-size: 3rem;
+    color: #f57003;
+    font-weight: 300;
+    font-family: "Cookie", cursive;    
+  }
+  .banner img {
+    width: 100%;  
+    margin: auto;
+    border-bottom: 0;
+    box-shadow: 10px 0 10px -5px rgba(51, 0, 53, 0.459);
+
+  }
+  .descripcion p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: end;
+    margin-bottom: 2rem;
+   
+}
+
+  .planes-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 columnas */
+    gap: 1rem;
+    width: 100%;
+  }
+  .conten1{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .contenedor-formulario{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+  }
+
+  .img-tarj {
+    height: auto;
+  }
+
+  .tabla{
+    display:block;
+    margin: auto;
+    
+  
+  }
+  .tablaMovil{
+    display:none;
+  }
+
+  .tabla> ul{
+    padding: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+  
+  }
+  .tabla li{
+    padding: 2rem;
+    margin-right: 0.9rem;
+    border-radius: 15px;
+}
+
+.formulario{
+  width: 90%;
+  margin: 2rem;
+
+}
+.contenedor-resultado {
+  margin: 2rem;
+}
+}
