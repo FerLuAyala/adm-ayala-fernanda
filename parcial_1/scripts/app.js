@@ -47,7 +47,7 @@ app.component('formulario-imc', {
       <div class="descripcion">
         <h2>IMC</h2>
       <p>La importancia de tener un cuerpo saludable.<br> Te invitamos a conocer <br><strong>"Tu Indice de Masa Corporal"</strong></p>
-      
+       <button @click="irAlFormulario">Ir al formulario</button>
       </div>
   </div>
   </section>  
@@ -91,9 +91,9 @@ app.component('formulario-imc', {
        
         <ul>
          <li class="naranja">Tabla de referencia</li>
-          <li class="bajo">Bajo peso menos de 18.5</li>
+          <li class="bajo">Bajo menor 18.5</li>
           <li class="normal">Normal 18.5 - 24.9</li>
-          <li class="medio">Normal-A superior 25.0 - 30.0</li>
+          <li class="Normal-Elevado ">Normal-Elevado 25.0 - 30.0</li>
           <li class="sobrepeso">Sobrepeso más de 30.1</li>
         </ul>
     </div>
@@ -161,7 +161,7 @@ app.component('formulario-imc', {
         //condicional de estado
         if (imc < 18.5) estado = "Bajo peso";
         else if (imc >= 18.5 && imc <= 24.9) estado = "Normal";
-        else if (imc >= 25 && imc <= 30.0) estado = "Normal-A superior";
+        else if (imc >= 25 && imc <= 30.0) estado = "Normal-Elevado";
         else if (imc >= 30.1) estado = "Sobrepeso";
 
         //creando objeto persona
@@ -179,17 +179,24 @@ app.component('formulario-imc', {
         this.persona = { nombre: "", peso: "", altura: "", genero: "" };
 
       }
-    }
-
+    },
+    irAlFormulario() {
+     const seccionFormulario = document.getElementById("formulario");
+      if (seccionFormulario) {
+      seccionFormulario.scrollIntoView({ behavior: "smooth" });
+     }
+      }
   }
 });
+
+
 app.component('mostrar-imc', {
 
   props: ['personas'],
   template: `
     <div v-if="personas && personas.length > 0" class="contenedor-resultado">
           <ul>          
-        <li v-for="(p, i) in personas" :key="i" :class="p.estado === 'Normal' ? 'normal' : (p.estado === 'Bajo peso' ? 'bajo' : (p.estado === 'Sobrepeso' ? 'sobrepeso' : 'medio'))">
+        <li v-for="(p, i) in personas" :key="i" :class="p.estado === 'Normal' ? 'normal' : (p.estado === 'Bajo peso' ? 'bajo' : (p.estado === 'Sobrepeso' ? 'sobrepeso' : 'Normal-Elevado'))">
           <p>Fecha del cálculo: {{ p.fecha }}</p>
           <p>Hola {{ formatearNombre(p.nombre) }} tu IMC es de {{ p.imc }} y estás en la categoría:  {{ formatearNombre(p.estado) }}.</p>
           <p>{{ informacion(p.estado) }}</p>
@@ -210,7 +217,7 @@ app.component('mostrar-imc', {
           return "Tener un IMC bajo significa que tu Índice de Masa Corporal está por debajo del rango considerado saludable para tu estatura. Lo ideal es seguir un plan que te ayude a alcanzar un peso saludable de forma gradual, con una combinación de alimentación nutritiva y ejercicio adaptado. ";
         case "Normal":
           return "Tener un IMC normal significa que tu peso está dentro del rango saludable para tu estatura. Esto indica un buen equilibrio entre masa corporal y altura. Lo ideal es mantener este estado a través de una alimentación balanceada, actividad física regular y buenos hábitos de salud.";
-        case "Normal-A superior":
+        case "Normal-Elevado":
           return "Tener Normal-A superior significa que tu peso está dentro del rango saludable para tu estatura, pero tambien muy cerca del sobrepeso lo que puede deberse a un exceso de grasa corporal.  Lo recomendable es adoptar un estilo de vida activo y ajustar la alimentación para reducir el peso de forma gradual y sostenible..";
         case "Sobrepeso":
           return "Tener sobrepeso significa que tu peso supera con claridad el rango saludable para tu estatura, generalmente por un exceso significativo de grasa corporal.Es fundamental buscar orientación profesional para diseñar un plan de alimentación, ejercicio y cuidado integral que permita mejorar tu calidad de vida y reducir los riesgos. ";
@@ -324,7 +331,7 @@ app.component('plan-recomendado', {
   <h3>Planes de alimentación y ejercicios sugeridos</h3>
     <div class="planes-container">
     
-        <componente-hijo
+        <plan-hijo
           v-for="x in planes"
           :key="x.id"
           :id="x.id"
@@ -342,7 +349,7 @@ app.component('plan-recomendado', {
 </section>
   `
 });
-app.component('componente-hijo', {
+app.component('plan-hijo', {
   props: ["id", "titulo", "texto", "texto2", "subtitulo" , "subtitulo2" ,"img", "alt", "seleccionado"],
   emits: ["click-imagen"],
   template: `

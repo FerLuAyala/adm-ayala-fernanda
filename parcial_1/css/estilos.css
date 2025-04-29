@@ -1,4 +1,4 @@
-/* Global */
+
 *{
   margin: 0;
   padding: 0;
@@ -17,44 +17,30 @@ body {
  }
 
  main {
-  background-color: rgba(238, 248, 211, 0.568);
+  
   max-width: 1124px;
   width: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 300;
-  color: rgb(240, 229, 229);
-  box-shadow: rgba(0, 0, 0, 0.219) 2px 2px 3px;
+  color: #faf2f2;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
   text-shadow: 4px 2px 2px rgba(0, 0, 0, 0.151);
-  margin: 0.2rem auto 0 auto;
+  margin: 0 auto 0 auto;
 }
 
-
-
-header {
-  
-    display: flex;
- 
-    align-items: center;  
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    background-color:#c9fbca;
-    height: 80px;
-    box-shadow: rgba(0, 0, 0, 0.219) 2px 2px 3px;   
-  
+.navbar {
+  background-color: #f58461; 
 }
 
-header img{
-  width: auto;
-  height: 70%;
-  margin: auto;
-} 
+.navbar a{
+  display:none;
+}
 
-header p {
-  display: none;
+.btn{
   
+  color: #fa9434;
+  border: 1px solid#f5f4f4;
 }
 
 
@@ -79,23 +65,24 @@ h3{
   text-align: center;
   color: #686767;
   border-top: 1px solid rgba(250, 144, 241, 0.425);
-  box-shadow: 0 5px 15px rgba(51, 0, 53, 0.459);
+  box-shadow: 0 5px 15px rgba(240, 88, 0, 0.459);
   font-weight: 400;
+ 
 }
 
 
 ul, li {
   list-style-type: none;  
-    padding: 0;   /* Elimina el padding */
-    margin: 0;    /* Elimina el margen */
+    padding: 0;  
+    margin: 0;  
   
 }
 
 
 
 strong {
-  color: #696766; /* Cambia el color del texto */
-  font-size: 1.8rem; /* Aumenta el tamaño de la fuente */
+  color: #696766; 
+  font-size: 1.8rem; 
   font-weight: 700;
 }
 
@@ -104,9 +91,9 @@ strong {
 .normal { background-color: #e3b8f7; color: #5e157a; }
 .bajo { background-color: #f5f7a9; color: #856404; }
 .sobrepeso { background-color: #faa8af; color: #dd2336; }
-.medio { background-color: #cce5ff; color: #388fec; }  
+.Normal-Elevado{ background-color: #cce5ff; color: #388fec; }  
 
-/*seccion navegacion*/
+
 #navegacion {
   background-color: #fff3cd;
   color: #f76b0e;
@@ -120,12 +107,13 @@ strong {
 }
 .descripcion{
 
-  padding: 1.5rem;
+  padding: 1.5rem;  
   text-align: center;
 }
 .descripcion p {
     font-size: 2rem;
     margin-bottom: 2rem;
+    
    
 }
 
@@ -209,8 +197,8 @@ strong {
 
 
 .tabla li{
-  width: 100%; /* Hace que cada <li> ocupe el 90% del ancho disponible en móviles */
-  max-width: none; /* Elimina el límite de ancho en móviles */
+  width: 100%; 
+  max-width: none; 
   box-shadow: 0 5px 15px rgba(51, 0, 53, 0.459);
   padding: 1rem;
 
@@ -218,8 +206,9 @@ strong {
 
 }
 button {
-  background-color: #f5f4f4;
-  color: rgb(236, 151, 23);  
+  background-color: #fa9434;
+  color:#f5f4f4;
+  
   font-size: 1.5rem;
   font-weight: 600;
   padding: 0.5rem 1rem 0.5rem 1rem  ;
@@ -233,21 +222,22 @@ button {
 }
 
 button:hover {
-  background-color: #fa9434;
+  background-color: #f5f4f4;
+  color: #fa9434;
   transition: background 0.3s ease;
-  color:#f5f4f4;
+ 
   box-shadow: 5px 3px 10px rgb(248, 129, 32);
 }
 
 
 small.error {
   display: block;
-  min-height: 1.2rem; /* Ajustá según tamaño del texto */
+  min-height: 1.2rem; 
   color: #f7f1f0;
   background-color: #f71d1d;
   font-size: 1rem;
   margin-top: 0.25rem;
-  visibility: hidden; /* Oculto, pero ocupa espacio */
+  visibility: hidden; 
 }
 
 small.error.visible {
@@ -285,21 +275,21 @@ small.error.visible {
 }
 
 #contenedor-plan{
-  background-color: #fab05b;
+  background-color: #fac78d;
 }
 
-/* Grillas */
+
 .planes-container {
   display: flex;
-  flex-direction: column;  /* Asegura que las tarjetas estén una debajo de otra */
+  flex-direction: column; 
   gap: 1rem;
   justify-content: center;
   padding: 2rem;
-  width: 100%;  /* Ocupa todo el ancho disponible */
+  width: 100%; 
 }
 
 .plan-card {
-  width: 100%; /* Ocupa todo el ancho del contenedor */
+  width: 100%; 
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -374,27 +364,24 @@ footer{
 
 /* Responsive */
 @media (min-width: 992px) {
-  header {
-    display: grid;
-    grid-template-columns: 1fr 12fr;  
-    align-items: center;
-    height: 80px;
+
+  .navbar a{
+    display: block;
+    font-family: "Cookie", cursive;    
+    color: #faf2f2;
+    font-size: 2rem;
+    
   }
   
-  header img{
-    width: auto;
-    height: 100%;    
-    padding-left: 2rem;
-  }
+    .navbar a:hover{
+      color: #fd6924;}
 
+      .btn:hover{
+        background-color:#faf2f2;
+        color:  #fa9434;
+        
+      }
 
-  header p {
-    display: block;
-    font-size: 3rem;
-    color: #f57003;
-    font-weight: 300;
-    font-family: "Cookie", cursive;    
-  }
   .banner img {
     width: 100%;  
     margin: auto;
@@ -405,14 +392,14 @@ footer{
   .descripcion p {
     font-size: 1.5rem;
     font-weight: 400;
-    text-align: end;
-    margin-bottom: 2rem;
    
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
   .planes-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* 4 columnas */
+    grid-template-columns: repeat(4, 1fr);  
     gap: 1rem;
     width: 100%;
   }
@@ -421,6 +408,7 @@ footer{
     grid-template-columns: 2fr 1fr;
     gap: 1rem;
     align-items: center;
+    
   }
 
   .contenedor-formulario{
